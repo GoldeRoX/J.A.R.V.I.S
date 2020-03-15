@@ -1,6 +1,7 @@
 import speech_recognition as sr
 from selenium import webdriver
 
+
 r = sr.Recognizer()
 while True:
     with sr.Microphone() as source:
@@ -46,6 +47,9 @@ while True:
                     icon.click()
                 except:
                     print("sorry, I don't get it sir")
+        elif text == "GitHub":
+            driver = webdriver.Chrome()
+            driver.get("https://github.com/GoldeRoX")
     except:
 
         print("Sorry Sir. I don't get it")
