@@ -21,7 +21,7 @@ while True:
                     print("You said : {}".format(text2))
                     driver = webdriver.Chrome()
                     driver.get("https://www.youtube.com/")
-                    #driver.maximize_window()
+                    driver.maximize_window()
                     search = driver.find_element_by_id("search")
                     search.send_keys(text2)
                     icon = driver.find_element_by_id("search-icon-legacy")
@@ -39,17 +39,18 @@ while True:
                     text3 = r.recognize_google(audio3)
                     print("You said : {}".format(text3))
                     driver = webdriver.Chrome()
-                    driver.get("https://www.wikipedia.org/")
-                    #driver.maximize_window()
-                    search = driver.find_element_by_id("searchInput")
+                    driver.get("https://pl.wikipedia.org/wiki/Specjalna:Szukaj")
+                    driver.maximize_window()
+                    search = driver.find_element_by_id("ooui-php-1")
                     search.send_keys(text3)
-                    icon = driver.find_element_by_class_name("pure-button pure-button-primary-progressive")
+                    icon = driver.find_element_by_class_name("oo-ui-actionFieldLayout-button")
                     icon.click()
                 except:
                     print("sorry, I don't get it sir")
         elif text == "GitHub":
             driver = webdriver.Chrome()
             driver.get("https://github.com/GoldeRoX")
+            driver.maximize_window()
     except:
 
         print("Sorry Sir. I don't get it")
